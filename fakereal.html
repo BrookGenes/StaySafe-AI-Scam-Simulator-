@@ -1,0 +1,217 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Fake or Real?</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #b9dfff, #e8f4ff);
+        color: #083b66;
+        text-align: center;
+    }
+
+    header {
+        padding: 30px 20px;
+        background: #ffffffaa;
+        border-bottom: 4px solid #6bbcff;
+        backdrop-filter: blur(6px);
+        position: relative;
+    }
+
+    h1 {
+        font-size: 3rem;
+        margin: 10px 0;
+        color: #004b8d;
+        text-shadow: 2px 2px 4px #92c9ff;
+    }
+
+    
+    .home-btn {
+        font-size: 3rem;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .test-box {
+        background: white;
+        margin: 40px auto;
+        padding: 30px;
+        max-width: 900px;
+        border-radius: 25px;
+        box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
+    }
+
+    .media-row {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .choice {
+        cursor: pointer;
+        border: 4px solid transparent;
+        border-radius: 20px;
+        transition: 0.25s;
+    }
+
+    .choice:hover {
+        transform: scale(1.05);
+    }
+
+    .correct {
+        border-color: #2ecc71 !important; 
+    }
+
+    .wrong {
+        border-color: #e74c3c !important; 
+        opacity: 0.8;
+    }
+
+    .explanation {
+        margin-top: 20px;
+        font-size: 1.3rem;
+        color: #003f72;
+        background: #d9eeff;
+        padding: 20px;
+        border-radius: 20px;
+        display: none;
+    }
+
+    video, img {
+        width: 330px;
+        border-radius: 15px;
+    }
+</style>
+
+<script>
+function choose(test, choice, correctChoice, explanationText) {
+
+    
+    const items = document.querySelectorAll(.test${test} .choice);
+    items.forEach(el => {
+        el.classList.remove("correct");
+        el.classList.remove("wrong");
+    });
+
+    
+    if (choice === correctChoice) {
+        document.getElementById(choice${test}-${choice}).classList.add("correct");
+    } else {
+        document.getElementById(choice${test}-${choice}).classList.add("wrong");
+        document.getElementById(choice${test}-${correctChoice}).classList.add("correct");
+    }
+
+    
+    const box = document.getElementById(explain${test});
+    box.style.display = "block";
+    box.innerHTML = explanationText;
+}
+</script>
+
+</head>
+<body>
+
+<header>
+    <a href="SH_home.html" class="home-btn">🏠</a>
+    <h1>Fake or Real? Test Your Skills</h1>
+</header>
+
+
+<div class="test-box test1">
+    <h2>Which image is real?</h2>
+
+    <div class="media-row">
+        <img id="choice1-1" class="choice" src="1.jpeg"
+             onclick="choose(1,1,2,'The AI image showed unnatural skin texture and overly smooth details.')" />
+
+        <img id="choice1-2" class="choice" src="2.jpeg"
+             onclick="choose(1,2,2,'Correct! Real photos have natural imperfections like uneven lighting and wrinkles.')" />
+    </div>
+
+    <div id="explain1" class="explanation"></div>
+</div>
+
+
+<div class="test-box test2">
+    <h2>Which one is AI?</h2>
+
+    <div class="media-row">
+        <img id="choice2-1" class="choice" src="3.jpg"
+             onclick="choose(2,1,1,'AI images often show strange background distortions and odd hand shapes.')" />
+
+        <img id="choice2-2" class="choice" src="4.jpg"
+             onclick="choose(2,2,1,'The other image showed AI artifacts like blurry earrings and mismatched shadows.')" />
+    </div>
+
+    <div id="explain2" class="explanation"></div>
+</div>
+
+
+<div class="test-box test3">
+    <h2>Which one looks AI-generated?</h2>
+
+    <div class="media-row">
+        <img id="choice3-1" class="choice" src="5.jpeg"
+             onclick="choose(3,1,2,'The real photo had normal lighting while the AI image had impossible reflections.')" />
+
+        <img id="choice3-2" class="choice" src="6.jpeg"
+             onclick="choose(3,2,2,'AI often creates overly sharp eyes or unrealistic bright colors.')" />
+    </div>
+
+    <div id="explain3" class="explanation"></div>
+</div>
+
+
+<div class="test-box test4">
+    <h2>Which video is the fake one?</h2>
+
+    <div class="media-row">
+        <video width="500" hieght="300" id="choice4-1" class="choice" controls src="11.mp4"
+               onclick="choose(4,1,1,'AI voice had uneven breathing sounds and repeated tone patterns.')" ></video>
+                
+        <video width="500" hieght="300" id="choice4-2" class="choice" controls src="12.mp4"
+               onclick="choose(4,2,1,'AI voice cloning often lacks true emotional changes.')" ></video>
+    </div>
+
+    <div id="explain4" class="explanation"></div>
+</div>
+
+
+<div class="test-box test5">
+    <h2>Which video is real?</h2>
+
+    <div class="media-row">
+        <video id="choice5-1" class="choice" controls src="13.mp4"
+               onclick="choose(5,1,2,'The AI video had lip movements out of sync with the speech.')" ></video>
+
+        <video id="choice5-2" class="choice" controls src="14.mp4"
+               onclick="choose(5,2,2,'Real videos show natural blinking and facial micro‑movements.')" ></video>
+    </div>
+
+    <div id="explain5" class="explanation"></div>
+</div>
+
+
+<div class="test-box test6">
+    <h2>Which clip is AI-generated?</h2>
+
+    <div class="media-row">
+        <video id="choice6-1" class="choice" controls src="15.mp4"
+               onclick="choose(6,1,1,'AI-generated videos sometimes show jittery facial edges or weird shadows.')" ></video>
+
+        <video id="choice6-2" class="choice" controls src="16.mp4"
+               onclick="choose(6,2,1,'The real video had more natural motion and clearer audio echoes.')" ></video>
+    </div>
+
+    <div id="explain6" class="explanation"></div>
+</div>
+
+</body>
+</html>

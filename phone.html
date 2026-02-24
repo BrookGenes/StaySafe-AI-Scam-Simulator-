@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Phone Call Scams</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #b9dfff, #e8f4ff);
+    color: #083b66;
+    text-align: center;
+}
+
+header {
+    padding: 30px 20px;
+    background: #ffffffaa;
+    border-bottom: 4px solid #6bbcff;
+    backdrop-filter: blur(6px);
+    position: relative;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 10px 0;
+    color: #004b8d;
+    text-shadow: 2px 2px 4px #92c9ff;
+}
+
+.home-btn {
+    font-size: 3rem;
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.section-box {
+    background: white;
+    margin: 40px auto;
+    padding: 30px;
+    max-width: 900px;
+    border-radius: 25px;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.15);
+}
+
+audio {
+    width: 90%;
+    margin-top: 10px;
+}
+
+.label {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #003f72;
+    margin-top: 20px;
+}
+
+.spot-btn {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    padding: 15px 25px;
+    background: #6bbcff;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.spot-btn:hover {
+    background: #4aa4f3;
+    transform: scale(1.05);
+}
+
+.explanation {
+    display: none;
+    margin-top: 20px;
+    background: #d9eeff;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    text-align: left;
+}
+</style>
+</head>
+<body>
+
+<header>
+    <a href="SH_home.html" class="home-btn">🏠</a>
+    <h1>Phone Call Scams Learn To Spot AI Voices</h1>
+</header>
+
+
+<div class="section-box">
+    <h2>“Your Grandson Needs Help!”</h2>
+
+    <p class="label">Real Voice:</p>
+    <audio controls src="real1.mp3"></audio>
+
+    <p class="label">AI‑Cloned Scam Voice:</p>
+    <audio controls src="ai1.mp3"></audio>
+
+    <button class="spot-btn" onclick="showExplain(1)">How To Tell? & What to do</button>
+
+    <div id="explain1" class="explanation">
+        <strong>How to Find the AI Voice:</strong>
+        <ul>
+            <li>The voice may sound too smooth or slightly robotic.</li>
+            <li>Emotion changes may sound “flat.”</li>
+            <li>There may be odd pauses or repeated tone patterns.</li>
+            <li>Scammer pushes urgency (“Send money now!”).</li>
+        </ul>
+
+        <strong>How To Respond Safely:</strong>
+        <ul>
+            <li>Hang up immediately.</li>
+            <li>Call your actual family member directly using a known number.</li>
+            <li>Never send money or gift cards from a phone call.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="section-box">
+    <h2>“Bank Fraud Alert”</h2>
+
+    <p class="label">Real Bank Representative:</p>
+    <audio controls src="real2.mp3"></audio>
+
+    <p class="label">AI‑Generated Fake Bank Caller:</p>
+    <audio controls src="ai2.mp3"></audio>
+
+    <button class="spot-btn" onclick="showExplain(2)">How To Tell? & What to do</button>
+
+    <div id="explain2" class="explanation">
+        <strong>Warning Signs:</strong>
+        <ul>
+            <li>Real banks do NOT ask for PINs or passwords on calls.</li>
+            <li>AI voice may sound “too perfect” or emotionless.</li>
+            <li>Caller ID can be faked don’t trust it.</li>
+        </ul>
+
+        <strong>Correct Response:</strong>
+        <ul>
+            <li>Hang up and call the number on the back of your bank card.</li>
+            <li>Do NOT give any personal information.</li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="section-box">
+    <h2>“Police Department Warning”</h2>
+
+    <p class="label">Real Police Officer:</p>
+    <audio controls src="real3.mp3"></audio>
+
+    <p class="label">AI‑Cloned Fake Officer:</p>
+    <audio controls src="ai3.mp3"></audio>
+
+    <button class="spot-btn" onclick="showExplain(3)">How To Tell? & What to do</button>
+
+    <div id="explain3" class="explanation">
+        <strong>Key Red Flags:</strong>
+        <ul>
+            <li>Police NEVER demand payment by phone.</li>
+            <li>AI voice may mispronounce your name strangely.</li>
+            <li>Scammer threatens arrest or legal trouble a common tactic.</li>
+        </ul>
+
+        <strong>Safe Response:</strong>
+        <ul>
+            <li>Hang up immediately.</li>
+            <li>Call your local police station using the official number.</li>
+            <li>Report the scam attempt.</li>
+        </ul>
+    </div>
+</div>
+
+<script>
+function showExplain(num) {
+    const box = document.getElementById("explain" + num);
+    box.style.display = "block";
+    box.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+</script>
+
+</body>
+</html>
